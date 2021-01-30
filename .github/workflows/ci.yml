@@ -7,11 +7,12 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
-      - name: Build 🏗
-        run: npm run build
-
       - name: Run tests 🧪
         uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+        env:
+          DEBUG: local-cypress
 
       # - name: Semantic Release 🚀
       #   uses: cycjimmy/semantic-release-action@v2
