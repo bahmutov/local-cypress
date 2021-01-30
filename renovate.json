@@ -21,7 +21,9 @@
         "*"
       ],
       "excludePackagePatterns": [
-        "cypress"
+        "cypress",
+        "debug",
+        "semantic-release"
       ],
       "enabled": false
     }
