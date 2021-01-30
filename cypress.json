@@ -1,6 +1,5 @@
 {
   "fixturesFolder": false,
   "pluginsFile": false,
-  "supportFile": false,
   "baseUrl": "https://example.cypress.io"
 }
