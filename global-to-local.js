@@ -22,6 +22,7 @@ export const cy = window.cy
  */
 export const Cypress = window.Cypress
 
+// SKIP for now, breaks "run all specs" mode
 // remove global objects
-delete window.cy
-delete window.Cypress
+// delete window.cy
+// delete window.Cypress
