@@ -7,6 +7,9 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
+      - name: Build 🏗
+        run: npm run Build
+
       - name: Run tests 🧪
         uses: cypress-io/github-action@v2
 

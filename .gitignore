@@ -1,2 +1,4 @@
 node_modules/
 cypress/videos
+index.d.ts
+index.d.ts.map
