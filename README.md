@@ -2,10 +2,13 @@
 [![ci status][ci image]][ci url] [![badges status][badges image]][badges url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-6.3.0-brightgreen)
 > Use Cypress without global objects
 
+The objects are still attached to the `window` object during the test, but the types are no longer global, you need to explicitly import them from this package.
+
 # WORK IN PROGRESS ⚠️
 
-- local `cy` and `Cypress`
-- local `expect` and `assert`
+- local `cy` and `Cypress` object types
+- local `expect` and `assert` assertion types
+- Mocha's `describe`, `it`, etc are still global types
 
 ## Install
 
@@ -18,6 +21,7 @@ npm install -D local-cypress
 In your spec files, instead of using global variables like `cy` and `expect`, import them
 
 ```js
+// cypress/integration/spec.js
 import { cy, Cypress, expect } from 'local-cypress'
 
 it('works', () => {
