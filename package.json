@@ -1,7 +1,7 @@
 {
-  "name": "local-cy",
+  "name": "local-cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cypress without global objects",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",

@@ -1,5 +1,5 @@
 // @ts-check
-import { cy } from '../../global-to-local'
+import { cy } from '../..'
 
 beforeEach(() => {
   cy.wrap('foo').should('equal', 'foo')
