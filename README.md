@@ -31,6 +31,10 @@ it('works', () => {
 })
 ```
 
+## Examples
+
+- [local-cypress-and-jest-typescript-example](https://github.com/bahmutov/local-cypress-and-jest-typescript-example)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2021
