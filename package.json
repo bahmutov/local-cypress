@@ -4,7 +4,7 @@
   "description": "Use Cypress without global objects",
   "main": "index.js",
   "types": "index.d.ts",
-  "private": true,
+  "private": false,
   "files": [
     "index.*",
     "postinstall.js"
