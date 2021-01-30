@@ -1,15 +1,17 @@
 {
   "name": "local-cypress",
   "version": "1.0.0",
-  "description": "Cypress without global objects",
+  "description": "Use Cypress without global objects",
   "main": "index.js",
+  "private": true,
+  "files": [],
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["cypress", "cypress-utility"],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "6.3.0",
     "prettier": "2.2.1"
