@@ -1,6 +1,6 @@
 {
   "name": "local-cypress",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Use Cypress without global objects",
   "main": "index.js",
   "types": "index.d.ts",
@@ -13,7 +13,8 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "build": "tsc",
-    "postinstall": "node ./postinstall"
+    "postinstall": "node ./postinstall",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "cypress",
@@ -25,9 +26,14 @@
     "@types/node": "14.14.22",
     "cypress": "6.3.0",
     "prettier": "2.2.1",
-    "typescript": "4.1.3"
+    "typescript": "4.1.3",
+    "semantic-release": "^17.3.7"
   },
   "dependencies": {
     "debug": "4.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/local-cypress.git"
   }
 }
