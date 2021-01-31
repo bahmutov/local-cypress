@@ -6,9 +6,9 @@ The objects are still attached to the `window` object during the test, but the t
 
 # WORK IN PROGRESS ⚠️
 
-- local `cy` and `Cypress` object types
-- local `expect` and `assert` assertion types
-- Mocha's `describe`, `it`, etc are still global types
+- [x] local `cy` and `Cypress` object types
+- [x] local `expect` and `assert` assertion types
+- [x] local Mocha's `describe`, `it`, etc types
 
 ## Install
 
@@ -22,7 +22,7 @@ In your spec files, instead of using global variables like `cy` and `expect`, im
 
 ```js
 // cypress/integration/spec.js
-import { cy, Cypress, expect } from 'local-cypress'
+import { cy, Cypress, expect, it } from 'local-cypress'
 
 it('works', () => {
   console.log(Cypress.config())

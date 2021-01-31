@@ -3,7 +3,7 @@
 /// <reference path="./node_modules/cypress/types/cypress-eventemitter.d.ts" />
 /// <reference path="./node_modules/cypress/types/cy-chai.d.ts" />
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assert = exports.expect = exports.Cypress = exports.cy = void 0;
+exports.xit = exports.test = exports.it = exports.afterEach = exports.after = exports.beforeEach = exports.before = exports.xcontext = exports.xdescribe = exports.context = exports.describe = exports.assert = exports.expect = exports.Cypress = exports.cy = void 0;
 /**
  * Object `cy` all Cypress API commands.
  * @see https://on.cypress.io/api
@@ -38,6 +38,18 @@ exports.expect = window.expect;
  */
 // @ts-ignore
 exports.assert = window.assert;
+// Mocha's globals as local variables
+exports.describe = window.describe;
+exports.context = window.context;
+exports.xdescribe = window.xdescribe;
+exports.xcontext = window.xcontext;
+exports.before = window.before;
+exports.beforeEach = window.beforeEach;
+exports.after = window.after;
+exports.afterEach = window.afterEach;
+exports.it = window.it;
+exports.test = window.test;
+exports.xit = window.xit;
 // SKIP for now, breaks "run all specs" mode
 // remove global objects
 // delete window.cy

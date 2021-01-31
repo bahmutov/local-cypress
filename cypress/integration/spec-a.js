@@ -1,5 +1,5 @@
 // @ts-check
-import { cy, Cypress, expect } from '../..'
+import { cy, Cypress, expect, describe, it } from '../..'
 
 describe('Local cy', () => {
   it('works', () => {

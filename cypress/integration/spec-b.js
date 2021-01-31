@@ -1,5 +1,5 @@
 // @ts-check
-import { cy, Cypress, assert } from '../..'
+import { cy, Cypress, assert, describe, it } from '../..'
 
 describe('Local cy in another spec', () => {
   it('works', () => {

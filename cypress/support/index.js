@@ -1,5 +1,5 @@
 // @ts-check
-import { cy } from '../..'
+import { cy, beforeEach } from '../..'
 
 beforeEach(() => {
   cy.wrap('foo').should('equal', 'foo')

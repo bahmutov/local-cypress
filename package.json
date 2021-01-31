@@ -13,8 +13,10 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "build": "tsc",
+    "watch": "tsc -w",
     "postinstall": "node ./postinstall",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "lint": "tsc --project cypress/tsconfig.json"
   },
   "keywords": [
     "cypress",

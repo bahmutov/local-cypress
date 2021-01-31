@@ -1,4 +1,4 @@
-import { cy, Cypress, expect } from '../..'
+import { cy, Cypress, expect, describe, it } from '../..'
 
 describe('When using TypeScript', () => {
   it('works', () => {

@@ -14,6 +14,9 @@ jobs:
         env:
           DEBUG: local-cypress
 
+      - name: Lint 🧹
+        run: npm run lint
+
       - name: Semantic Release 🚀
         uses: cycjimmy/semantic-release-action@v2
         with:
