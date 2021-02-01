@@ -15,6 +15,8 @@ The objects are still attached to the `window` object during the test, but the t
 
 ```shell
 npm install -D local-cypress
+# or
+yarn add -D local-cypress postinstall-postinstall
 ```
 
 ## Use
