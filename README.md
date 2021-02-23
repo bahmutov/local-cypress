@@ -9,7 +9,8 @@ The objects are still attached to the `window` object during the test, but the t
 - [x] local `cy` and `Cypress` object types
 - [x] local `expect` and `assert` assertion types
 - [x] local Mocha's `describe`, `it`, etc types
-- [x] missing EventEmitter and NodeEventEmitter types [#4](https://github.com/bahmutov/local-cypress/issues/4). This would be done better by refactoring Cypress' own types
+- [x] missing EventEmitter and NodeEventEmitter types
+- [ ] uses relative path `cy-chai.d.ts`
 
 ## Install
 

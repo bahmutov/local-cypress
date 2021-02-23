@@ -1,6 +1,5 @@
 "use strict";
 /// <reference types="cypress" />
-// /// <reference path="./node_modules/cypress/types/cypress-eventemitter.d.ts" />
 /// <reference path="./node_modules/cypress/types/cy-chai.d.ts" />
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.xit = exports.test = exports.it = exports.afterEach = exports.after = exports.beforeEach = exports.before = exports.xcontext = exports.xdescribe = exports.context = exports.describe = exports.assert = exports.expect = exports.Cypress = exports.cy = void 0;

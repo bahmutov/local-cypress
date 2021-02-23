@@ -84,28 +84,5 @@ function noGlobalMocha() {
   }
 }
 
-function addNodeEventEmitterToCypress() {
-  // cypress types use NodeEventEmitter without importing it :(
-  const typesFolder = findCypressTypes()
-  const cypressTypesFilename = path.join(typesFolder, 'cypress.d.ts')
-  debug('loading %s', cypressTypesFilename)
-  const cypressTypes = fs.readFileSync(cypressTypesFilename, 'utf8').trim()
-  const lines = cypressTypes.split(os.EOL)
-
-  const isEventEmitterReferenceLine = (line) =>
-    line === '/// <reference path="./cypress-eventemitter.d.ts" />'
-
-  const alreadyPresent = lines.some(isEventEmitterReferenceLine)
-  if (!alreadyPresent) {
-    lines.unshift('/// <reference path="./cypress-eventemitter.d.ts" />')
-    const newCode = lines.join(os.EOL) + os.EOL
-    fs.writeFileSync(cypressTypesFilename, newCode, 'utf8')
-    debug('added event emitter reference line to %s', cypressTypesFilename)
-  } else {
-    debug('nothing to change in %s', cypressTypesFilename)
-  }
-}
-
 noGlobalCy()
 noGlobalMocha()
-addNodeEventEmitterToCypress()
