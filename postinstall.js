@@ -2,7 +2,6 @@
 // @ts-check
 const path = require('path')
 const fs = require('fs')
-const os = require('os')
 const debug = require('debug')('local-cypress')
 
 // returns the types folder
@@ -19,7 +18,7 @@ function noGlobalCy() {
   const cypressTypesFilename = path.join(typesFolder, 'index.d.ts')
   debug('loading %s', cypressTypesFilename)
   const cypressTypes = fs.readFileSync(cypressTypesFilename, 'utf8').trim()
-  const lines = cypressTypes.split(os.EOL)
+  const lines = cypressTypes.split("\n")
 
   const isGlobalLine = (line) =>
     line.startsWith('/// ') &&
@@ -37,7 +36,7 @@ function noGlobalCy() {
   })
 
   if (changedLines) {
-    const newCode = processed.join(os.EOL) + os.EOL
+    const newCode = processed.join("\n") + "\n"
     fs.writeFileSync(cypressTypesFilename, newCode, 'utf8')
     debug('wrote %d changed line(s)', changedLines)
   } else {
@@ -50,7 +49,7 @@ function noGlobalMocha() {
   const mochaTypesFilename = path.join(typesFolder, 'mocha', 'index.d.ts')
   debug('loading %s', mochaTypesFilename)
   const mochaTypes = fs.readFileSync(mochaTypesFilename, 'utf8').trim()
-  const lines = mochaTypes.split(os.EOL)
+  const lines = mochaTypes.split("\n")
 
   const isGlobalLine = (line) =>
     line.startsWith('declare var describe: ') ||
@@ -76,7 +75,7 @@ function noGlobalMocha() {
   })
 
   if (changedLines) {
-    const newCode = processed.join(os.EOL) + os.EOL
+    const newCode = processed.join("\n") + "\n"
     fs.writeFileSync(mochaTypesFilename, newCode, 'utf8')
     debug('wrote %d changed line(s)', changedLines)
   } else {
