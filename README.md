@@ -1,5 +1,5 @@
 # local-cypress
-[![ci status][ci image]][ci url] [![badges status][badges image]][badges url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-8.7.0-brightgreen)
+[![ci status][ci image]][ci url] [![badges status][badges image]][badges url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.0.0-brightgreen)
 > Use Cypress without global objects, read [the blog post](https://glebbahmutov.com/blog/local-cypress/)
 
 The objects are still attached to the `window` object during the test, but the types are no longer global, you need to explicitly import them from this package.
