@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 /// <reference path="./node_modules/cypress/types/cy-chai.d.ts" />
 
-type cy = Cypress.cy & EventEmitter
-type Cypress = Cypress.Cypress & EventEmitter
+type cy = Cypress.cy & CyEventEmitter
+type Cypress = Cypress.Cypress & CyEventEmitter
 
 /**
  * Object `cy` all Cypress API commands.
  * @see https://on.cypress.io/api
- * @type {Cypress.cy & EventEmitter}
+ * @type {Cypress.cy & CyEventEmitter}
  * @example
  *  cy.get('button').click()
  *  cy.get('.result').contains('Expected text')
@@ -18,7 +18,7 @@ export const cy: cy = window.cy
 /**
  * Holds bundled Cypress utilities and constants.
  * @see https://on.cypress.io/api
- * @type {Cypress.Cypress & EventEmitter}
+ * @type {Cypress.Cypress & CyEventEmitter}
  * @example
  *  Cypress.config("pageLoadTimeout") // => 60000
  *  Cypress.version // => "6.3.0"
