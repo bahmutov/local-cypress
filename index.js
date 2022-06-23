@@ -6,7 +6,7 @@ exports.xit = exports.test = exports.it = exports.afterEach = exports.after = ex
 /**
  * Object `cy` all Cypress API commands.
  * @see https://on.cypress.io/api
- * @type {Cypress.cy & EventEmitter}
+ * @type {Cypress.cy & CyEventEmitter}
  * @example
  *  cy.get('button').click()
  *  cy.get('.result').contains('Expected text')
@@ -16,7 +16,7 @@ exports.cy = window.cy;
 /**
  * Holds bundled Cypress utilities and constants.
  * @see https://on.cypress.io/api
- * @type {Cypress.Cypress & EventEmitter}
+ * @type {Cypress.Cypress & CyEventEmitter}
  * @example
  *  Cypress.config("pageLoadTimeout") // => 60000
  *  Cypress.version // => "6.3.0"
