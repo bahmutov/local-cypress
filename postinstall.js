@@ -6,11 +6,27 @@ const debug = require('debug')('local-cypress')
 
 // returns the types folder
 function findCypressTypes() {
-  const cypressAt = require.resolve('cypress')
-  debug('Cypress found at %s', cypressAt)
-  const cypressFolder = path.dirname(cypressAt)
-  const typesFolder = path.join(cypressFolder, 'types')
-  return typesFolder
+  const cypressPackageJson = require.resolve('cypress/package.json')
+  debug('Cypress package.json found at %s', cypressPackageJson)
+  const cypressFolder = path.dirname(cypressPackageJson)
+
+  const candidateTypesFolders = [
+    path.join(cypressFolder, 'types'),
+    path.join(cypressFolder, 'dist', 'types'),
+  ]
+
+  for (const candidateTypesFolder of candidateTypesFolders) {
+    if (fs.existsSync(path.join(candidateTypesFolder, 'index.d.ts'))) {
+      debug('Cypress types folder resolved to %s', candidateTypesFolder)
+      return candidateTypesFolder
+    }
+  }
+
+  throw new Error(
+    `Could not locate Cypress type definitions. Looked in: ${candidateTypesFolders.join(
+      ', ',
+    )}`,
+  )
 }
 
 function noGlobalCy() {
@@ -18,7 +34,7 @@ function noGlobalCy() {
   const cypressTypesFilename = path.join(typesFolder, 'index.d.ts')
   debug('loading %s', cypressTypesFilename)
   const cypressTypes = fs.readFileSync(cypressTypesFilename, 'utf8').trim()
-  const lines = cypressTypes.split("\n")
+  const lines = cypressTypes.split('\n')
 
   const isGlobalLine = (line) =>
     line.startsWith('/// ') &&
@@ -36,7 +52,7 @@ function noGlobalCy() {
   })
 
   if (changedLines) {
-    const newCode = processed.join("\n") + "\n"
+    const newCode = processed.join('\n') + '\n'
     fs.writeFileSync(cypressTypesFilename, newCode, 'utf8')
     debug('wrote %d changed line(s)', changedLines)
   } else {
@@ -49,7 +65,7 @@ function noGlobalMocha() {
   const mochaTypesFilename = path.join(typesFolder, 'mocha', 'index.d.ts')
   debug('loading %s', mochaTypesFilename)
   const mochaTypes = fs.readFileSync(mochaTypesFilename, 'utf8').trim()
-  const lines = mochaTypes.split("\n")
+  const lines = mochaTypes.split('\n')
 
   const isGlobalLine = (line) =>
     line.startsWith('declare var describe: ') ||
@@ -75,7 +91,7 @@ function noGlobalMocha() {
   })
 
   if (changedLines) {
-    const newCode = processed.join("\n") + "\n"
+    const newCode = processed.join('\n') + '\n'
     fs.writeFileSync(mochaTypesFilename, newCode, 'utf8')
     debug('wrote %d changed line(s)', changedLines)
   } else {
